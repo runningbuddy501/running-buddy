@@ -10,12 +10,33 @@ function getLocation() {
     alert("Geolocation is not supported by this browser.");
   }
 }
-document.getElementById("taskForm").addEventListener("submit", function (e) {
-  e.preventDefault(); // Stop form from submitting
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("taskForm");
+  const thankYouMessage = document.getElementById("thankYouMessage");
 
-  // Optional: Collect data here and send it somewhere if you want
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-  // Hide form and show thank you
-  document.getElementById("taskForm").classList.add("hidden");
-  document.getElementById("thankYouMsg").classList.remove("hidden");
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: "POST",
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        form.reset();
+        thankYouMessage.classList.remove("hidden");
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    })
+    .catch(error => {
+      alert("Error: " + error.message);
+    });
+  });
 });
+
