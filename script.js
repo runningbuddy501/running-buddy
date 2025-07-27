@@ -10,3 +10,12 @@ function getLocation() {
     alert("Geolocation is not supported by this browser.");
   }
 }
+document.getElementById("taskForm").addEventListener("submit", function (e) {
+  e.preventDefault(); // Stop form from submitting
+
+  // Optional: Collect data here and send it somewhere if you want
+
+  // Hide form and show thank you
+  document.getElementById("taskForm").classList.add("hidden");
+  document.getElementById("thankYouMsg").classList.remove("hidden");
+});
