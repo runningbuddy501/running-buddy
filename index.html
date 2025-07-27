@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Running Buddy</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="bg-gradient-to-b from-green-50 to-white text-gray-900 font-sans">
+  <header class="bg-green-600 text-white p-6 shadow-lg">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-4xl font-extrabold">Running Buddy</h1>
+      <p class="text-lg">Your Personal Errand Partner in Kakinada</p>
+    </div>
+  </header>
+
+  <main class="p-6 space-y-12 max-w-4xl mx-auto">
+    <!-- Services Section -->
+    <section>
+      <h2 class="text-3xl font-semibold mb-4">🛍️ Our Services</h2>
+      <p class="mb-2 text-lg">Ask Anything, We’ll Do It!</p>
+      <ul class="list-disc list-inside space-y-2 text-base">
+        <li>Grocery shopping, bill payments, medicine pickup</li>
+        <li>Courier drops, food delivery, document collection</li>
+        <li>Helping elders, emergency purchases, anything legal</li>
+        <li>One-time help or regular assistance – all covered!</li>
+        <li>💸 Charges: ₹10/km or ₹60/hour (whichever is higher)</li>
+        <li>📦 Monthly Packages: Daily milk, tiffin, vegetables — fixed monthly cost, call us to customize</li>
+      </ul>
+    </section>
+
+    <!-- Booking Form -->
+    <section>
+      <h2 class="text-3xl font-semibold mb-4">📝 Book a Task</h2>
+      <p class="mb-2">Fill the form below to request an errand. We'll get in touch soon.</p>
+      <form action="https://formsubmit.co/runningbuddy501@gmail.com" method="POST" class="space-y-4 max-w-xl">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="thanks.html">
+
+        <input type="text" name="Name" placeholder="Your Name" required class="w-full p-3 border rounded shadow">
+        <input type="tel" name="Phone" placeholder="Phone Number" required class="w-full p-3 border rounded shadow">
+        
+        <textarea name="What To Do" placeholder="What do you want us to do? (e.g., pick up parcel, pay bill, get groceries)" required class="w-full p-3 border rounded shadow"></textarea>
+        
+        <input type="text" name="Estimated Cost" placeholder="Estimated cost (optional)" class="w-full p-3 border rounded shadow">
+        <small class="text-sm text-gray-500 italic block">Leave blank if unsure. Final cost will be confirmed after review.</small>
+        
+        <input type="url" id="autoLocation" name="Location Link" placeholder="Click to auto detect your location" onclick="getLocation()" readonly required class="w-full p-3 border rounded shadow cursor-pointer">
+        
+        <button type="submit" class="bg-green-600 text-white px-6 py-3 rounded hover:bg-green-700">Submit</button>
+      </form>
+    </section>
+
+    <!-- WhatsApp Contact -->
+    <section>
+      <h2 class="text-3xl font-semibold mb-4">💬 Contact Us</h2>
+      <p>Prefer chatting? Click below to WhatsApp us directly.</p>
+      <a href="https://wa.me/919059579975" target="_blank" class="inline-block mt-2 bg-green-500 text-white py-3 px-6 rounded hover:bg-green-600">Chat on WhatsApp</a>
+    </section>
+
+    <!-- Monthly Deals -->
+    <section class="bg-yellow-100 p-6 rounded shadow">
+      <h2 class="text-3xl font-bold text-yellow-800 mb-2">🔥 Monthly Deals</h2>
+      <ul class="text-lg text-gray-700 space-y-1">
+        <li>🥛 Daily Milk Pickup: ₹499/month</li>
+        <li>🥗 Tiffin from your favorite shop: ₹899/month</li>
+        <li>🥦 Vegetable pickup daily: ₹699/month</li>
+        <li>🎯 Custom tasks package: starting ₹399/month</li>
+      </ul>
+      <p class="text-sm text-gray-600 mt-1">Covers 1–2 daily tasks within city limits. Custom plans available!</p>
+      <a href="https://wa.me/919059579975" class="inline-block mt-3 bg-yellow-500 text-white px-6 py-2 rounded hover:bg-yellow-600">Book Monthly Plan</a>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="bg-white p-6 shadow-md rounded">
+      <h2 class="text-3xl font-bold mb-4">✅ Why Choose Us Over Apps?</h2>
+      <ul class="list-disc list-inside space-y-3 text-gray-800">
+        <li>⚡ Urgent delivery within 30–60 minutes — no app guarantees that.</li>
+        <li>🛍️ Delivery from any store — not just partner brands.</li>
+        <li>👴 Help for elders who don’t use smartphones or apps.</li>
+        <li>🏱 Custom errands — like paying bills or buying gifts.</li>
+        <li>☎️ Human contact — we talk to you and understand your needs.</li>
+        <li>🏡 Cash payment, pay later, or combine tasks — full flexibility.</li>
+        <li>🎯 We support local vendors and street sellers — apps don’t.</li>
+      </ul>
+    </section>
+
+    <!-- Real-Life Examples -->
+    <section class="bg-gray-100 p-6 shadow-md rounded">
+      <h2 class="text-3xl font-bold mb-4">📌 Real-Life Examples We Can Help With</h2>
+      <ul class="list-disc list-inside space-y-3 text-gray-800">
+        <li>🌸 Aunty wants flowers from the temple at 6 AM — we can do that.</li>
+        <li>🥟 Student wants hot samosas from a specific stall — we’ll get them.</li>
+        <li>👔 Forgot your wallet at home? We’ll drop it at your office.</li>
+        <li>💊 Elderly couple needs BP medicine but can’t use apps? We’ll help.</li>
+        <li>👶 New mother needs diapers + snacks + gas bill paid? All in one go!</li>
+      </ul>
+    </section>
+
+    <!-- Privacy -->
+    <section id="privacy" class="bg-white p-6 shadow rounded">
+      <h2 class="text-2xl font-semibold mb-4">🔐 Privacy Policy</h2>
+      <p>We collect only necessary info like name, phone & location to fulfill tasks. Data is safe and not shared.</p>
+    </section>
+  </main>
+
+  <footer class="bg-gray-200 p-4 text-center text-sm text-gray-600">
+    <p>&copy; 2025 <span class="font-semibold">Running Buddy</span> | Made with ❤️ in Kakinada</p>
+    <p>PhonePe: 9059579975@ybl</p>
+    <p>Email: <a href="mailto:runningbuddy501@gmail.com" class="text-blue-600 hover:underline">runningbuddy501@gmail.com</a></p>
+  </footer>
+</body>
+</html>
