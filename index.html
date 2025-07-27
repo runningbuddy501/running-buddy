@@ -36,21 +36,22 @@
       <h2 class="text-3xl font-semibold mb-4">📝 Book a Task</h2>
       <p class="mb-2">Fill the form below to request an errand. We'll get in touch soon.</p>
       <form action="https://formsubmit.co/runningbuddy501@gmail.com" method="POST" class="space-y-4 max-w-xl">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="thanks.html">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_next" value="https://runningbuddy501.github.io/thanks.html">
 
-        <input type="text" name="Name" placeholder="Your Name" required class="w-full p-3 border rounded shadow">
-        <input type="tel" name="Phone" placeholder="Phone Number" required class="w-full p-3 border rounded shadow">
-        
-        <textarea name="What To Do" placeholder="What do you want us to do? (e.g., pick up parcel, pay bill, get groceries)" required class="w-full p-3 border rounded shadow"></textarea>
-        
-        <input type="text" name="Estimated Cost" placeholder="Estimated cost (optional)" class="w-full p-3 border rounded shadow">
-        <small class="text-sm text-gray-500 italic block">Leave blank if unsure. Final cost will be confirmed after review.</small>
-        
-        <input type="url" id="autoLocation" name="Location Link" placeholder="Click to auto detect your location" onclick="getLocation()" readonly required class="w-full p-3 border rounded shadow cursor-pointer">
-        
-        <button type="submit" class="bg-green-600 text-white px-6 py-3 rounded hover:bg-green-700">Submit</button>
-      </form>
+  <input type="text" name="Name" placeholder="Your Name" required class="w-full p-3 border rounded shadow">
+  <input type="tel" name="Phone" placeholder="Phone Number" required class="w-full p-3 border rounded shadow">
+
+  <textarea name="What To Do" placeholder="What do you want us to do?" required class="w-full p-3 border rounded shadow"></textarea>
+
+  <input type="text" name="Estimated Cost" placeholder="Estimated cost (optional)" class="w-full p-3 border rounded shadow">
+  <small class="text-sm text-gray-500 italic block">Leave blank if unsure. Final cost will be confirmed after review.</small>
+
+  <input type="url" id="autoLocation" name="Location Link" placeholder="Click to auto detect your location" onclick="getLocation()" readonly required class="w-full p-3 border rounded shadow cursor-pointer">
+
+  <button type="submit" class="bg-green-600 text-white px-6 py-3 rounded hover:bg-green-700">Submit</button>
+</form>
+
     </section>
 
     <!-- WhatsApp Contact -->
